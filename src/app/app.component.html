@@ -1,0 +1,20 @@
+<div [formGroup]="studentFromGroup">
+  <div
+    class="div"
+    formArrayName="studentFormArray"
+    *ngFor="let form of getFormArrayDetails(); let i = index"
+  >
+    <div [formGroupName]="i">
+      {{ i + 1 }} subject<br />
+      <input formControlName="subject" /><br /><br />
+      Marks<br />
+      <input formControlName="marks" type="checkbox" /><br /><br />
+      <button (click)="removeIems(i)">X Delete</button>
+    </div>
+  </div>
+
+  <p>click on add more to add marks</p>
+  <button (click)="AddMore()">+Add More</button>
+</div>
+
+<button (click)="savestu()">Save student Marks</button>
